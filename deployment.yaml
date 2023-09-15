@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-service
+  labels:
+    app: backend-service
+spec:
+  selector:
+    matchLabels:
+      app: backend-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: backend-service
+    spec:
+      containers:
+      - name: testit-container
+        image: 377371593537.dkr.ecr.us-east-1.amazonaws.com/webapp2:latest
+        ports:
+        - containerPort: 80
+ 
